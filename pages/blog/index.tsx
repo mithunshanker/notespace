@@ -15,4 +15,4 @@ function BLOG_index() {
   )
 }
 
-export default NEET_index
+export default BLOG_index
