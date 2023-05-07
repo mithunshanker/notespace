@@ -15,7 +15,7 @@ function Admin() {
   const[Turl,setTurl]=useState("")
   const[Type,setType]=useState("")
   const[Loading,setLoading]=useState(false)
-  const[Sucess,setSuccess]=useState()
+  const[Sucess,setSuccess]=useState<Boolean|undefined>()
   function wait(ms: number | undefined) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }

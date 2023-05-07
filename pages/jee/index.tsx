@@ -9,6 +9,7 @@ import Image from "next/image";
 import pdf from "../../public/images/pdf.png";
 import other from "../../public/images/other.png";
 import { useRouter } from "next/router";
+import { boolean } from "mathjs";
 
 export async function getServerSideProps(context: { query: { s: any; }; }) {
   const f = context.query.s && context.query.s;
@@ -39,12 +40,12 @@ export default function JEEindex({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [Exp, setExp] = useState(false);
-  const [H, setH] = useState(
+  const [H, setH] = useState<String|undefined>(
     "-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
   );
-  const [P, setP] = useState();
-  const [M, setM] = useState();
-  const [C, setC] = useState();
+  const [P, setP] = useState<String|undefined>();
+  const [M, setM] = useState<String|undefined>();
+  const [C, setC] = useState<String|undefined>();
   const C_handler = (x: string) => {
     if (x == "h") {
       setH(
@@ -122,9 +123,9 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 ></path>
               </svg>
             </button>
