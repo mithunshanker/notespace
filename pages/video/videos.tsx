@@ -6,7 +6,7 @@ import {useRouter} from 'next/router'
 import Link from 'next/link';
 import Head from 'next/head';
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { query: { topic: any; }; }) {
   const{topic}=context.query
   console.log
   try {
