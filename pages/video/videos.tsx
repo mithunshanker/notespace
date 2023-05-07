@@ -54,7 +54,7 @@ function Videos({
    </Head>
    <h1 className="flex justify-center text-center text-3xl lg:text-5xl font-extrabold dark:text-white ">Video On {topic}</h1>
    {
-    videos&&videos.map((d)=>{
+    videos&&videos.map((d: { id: { videoId: any; }; snippet: { thumbnails: { medium: { url: string | undefined; }; }; }; })=>{
       return(
         
       <div className="flex justify-center  py-10 sm:py-0">
