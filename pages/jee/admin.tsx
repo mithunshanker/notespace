@@ -16,7 +16,7 @@ function Admin() {
   const[Type,setType]=useState("")
   const[Loading,setLoading]=useState(false)
   const[Sucess,setSuccess]=useState()
-  function wait(ms) {
+  function wait(ms: number | undefined) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   let submitForm = async () => {

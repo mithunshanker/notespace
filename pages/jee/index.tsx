@@ -3,14 +3,14 @@ import clientPromise from "../../lib/mongodb";
 import { InferGetServerSidePropsType } from "next";
 import "tailwindcss/tailwind.css";
 import styles from "-../styles/Home.module.css";
-import { useState } from "react";
+import { Key, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import pdf from "../../public/images/pdf.png";
 import other from "../../public/images/other.png";
 import { useRouter } from "next/router";
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context: { query: { s: any; }; }) {
   const f = context.query.s && context.query.s;
   const fq = { subject: f };
   try {
@@ -45,7 +45,7 @@ export default function JEEindex({
   const [P, setP] = useState();
   const [M, setM] = useState();
   const [C, setC] = useState();
-  const C_handler = (x) => {
+  const C_handler = (x: string) => {
     if (x == "h") {
       setH(
         "-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
@@ -251,7 +251,7 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
           </div>
         </nav>
         {/* items */}
-        {data.map((d) => {
+        {data.map((d: { _id: Key | undefined; type: {} | null | undefined; topic: {} | null | undefined; subject: {} | null | undefined; downloadurl: string | undefined; }) => {
           return (
             <div key={d._id} className="flex justify-center pt-5 pr-5 pl-5 ">
               <div className=" pt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition duration-500 transform hover:scale-105">
