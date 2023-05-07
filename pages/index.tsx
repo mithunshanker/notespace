@@ -9,6 +9,7 @@ function Index() {
 <>
 <Head>
         <title>Note Space</title>
+  <meta name="google-site-verification" content="qxlPnmzsFMlt3LeSTLad5Exmed57pkYvN4_n_XEkIh4" />
         <meta name="description" content="Our website is a one-stop destination for JEE & NEET aspirants looking for high-quality handwritten notes to boost their exam preparation. We offer an extensive collection of notes covering a wide range of topics, created by JEE & NEET aspirants.
 
 We believe that handwritten notes are the best way to learn complex concepts, as they provide a personal touch that printed notes often lack.
