@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import 'tailwindcss/tailwind.css'
+import Head from 'next/head'
 
   
 
@@ -47,6 +48,9 @@ function Admin() {
 
   return (
     <div>
+      <Head>
+  <title>Admin-Page JEE</title>
+</Head>
 
 <h1 className="flex justify-center pt-2 text-5xl font-extrabold dark:text-white">Admin Panel</h1>
 
