@@ -1,10 +1,6 @@
-import { time, timeStamp } from 'console'
-import { waitForDebugger } from 'inspector'
-
-import { type } from 'os'
 import React, { useState } from 'react'
 import 'tailwindcss/tailwind.css'
-import {useRouter} from 'next/router'
+
   
 
 
@@ -48,7 +44,7 @@ function Admin() {
  
     
   };
-  console.log(Date.now())
+
   return (
     <div>
 
