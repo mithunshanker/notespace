@@ -1,6 +1,7 @@
+
+import Head from 'next/head'
 import React, { useState } from 'react'
 import 'tailwindcss/tailwind.css'
-import Head from 'next/head'
 
   
 
@@ -19,7 +20,7 @@ function Admin() {
   let submitForm = async () => {
     if((Topic&&Subject&&Downloadurl&&Type&&Subject!=null)){
       Subject.toLowerCase()=="mathematics"?setSubject("maths"):null
-  
+   setLoading(true)
     await fetch("http://localhost:3000/api/post", {
       method: "POST",
       body: JSON.stringify({
@@ -32,10 +33,10 @@ function Admin() {
       }),
     });
     
-    
-
-    
-
+    setSuccess(true)
+    setLoading(false)
+    await wait(2000)
+    setSuccess(undefined)
   }
   else{
     setSuccess(false)
@@ -48,10 +49,9 @@ function Admin() {
 
   return (
     <div>
-      <Head>
+<Head>
   <title>Admin-Page JEE</title>
 </Head>
-
 <h1 className="flex justify-center pt-2 text-5xl font-extrabold dark:text-white">Admin Panel</h1>
 
     <div className="flex justify-center pt-10">

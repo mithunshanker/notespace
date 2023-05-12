@@ -1,7 +1,10 @@
 import React from 'react'
 import 'tailwindcss/tailwind.css'
+import Navbar from '../../components/Navbar'
 function BLOG_index() {
   return (
+    <>
+    <Navbar/>
     <div className="w-full h-screen" style={{"backgroundImage": "url('https://vojislavd.com/ta-template-demo/assets/img/coming-soon.jpg')"}}>
     <div className="w-full h-screen flex flex-col items-center justify-between bg-black bg-opacity-70 py-8">
         <div className="flex-1 flex flex-col items-center justify-center">
@@ -11,7 +14,7 @@ function BLOG_index() {
         </div>
         
     </div>
-</div>
+</div></>
   )
 }
 

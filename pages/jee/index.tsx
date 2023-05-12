@@ -9,7 +9,7 @@ import Image from "next/image";
 import pdf from "../../public/images/pdf.png";
 import other from "../../public/images/other.png";
 import { useRouter } from "next/router";
-
+import { boolean } from "mathjs";
 
 export async function getServerSideProps(context: { query: { s: any; }; }) {
   const f = context.query.s && context.query.s;
