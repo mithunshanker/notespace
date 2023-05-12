@@ -67,7 +67,7 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input onChange={(e)=>{
+      <input vgalue={Topic} onChange={(e)=>{
         setTopic(e.target.value)
       }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
     </div>
@@ -79,7 +79,7 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input onChange={(e)=>{
+      <input value={Subject} onChange={(e)=>{
         setSubject(e.target.value)
       }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
     </div>
@@ -91,7 +91,7 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input onChange={(e)=>{
+      <input value={Downloadurl} onChange={(e)=>{
         setDownloadurl(e.target.value)
       }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
     </div>
@@ -103,7 +103,7 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input onChange={(e)=>{
+      <input value={Turl} onChange={(e)=>{
        setTurl(e.target.value)
       }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
     </div>
@@ -115,7 +115,7 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input onChange={(e)=>{
+      <input value={Type} onChange={(e)=>{
         setType(e.target.value)
       }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
     </div>
