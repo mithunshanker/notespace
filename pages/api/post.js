@@ -1,12 +1,13 @@
-
 import clientPromise from "../../lib/mongodb";
 import cors from 'cors'
+
 const corsMiddleware = cors({
   // Set the origin to allow requests from the specified domain
   origin: 'https://notesspace.netlify.app/jee/admin'
 });
 
 export default async function handler(req, res) {
+  // Apply the cors middleware to allow cross-origin requests
   corsMiddleware(req, res, async () => {
     const client = await clientPromise;
     const db = client.db("db");
