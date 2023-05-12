@@ -3,7 +3,7 @@ import cors from 'cors'
 
 const corsMiddleware = cors({
   // Set the origin to allow requests from the specified domain
-  origin: 'https://notesspace.netlify.app/jee/admin'
+  origin: 'https://notesspace.netlify.app/'
 });
 
 export default async function handler(req, res) {
