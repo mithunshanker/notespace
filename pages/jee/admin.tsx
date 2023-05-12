@@ -32,7 +32,11 @@ function Admin() {
         createdAt:Date.now()
       }),
     });
-    
+    setTopic("")
+    setSubject("")
+    setDownloadurl("")
+    setTurl("")
+    setType("")
     setSuccess(true)
     setLoading(false)
     await wait(2000)
