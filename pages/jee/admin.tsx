@@ -21,7 +21,7 @@ function Admin() {
     if((Topic&&Subject&&Downloadurl&&Type&&Subject!=null)){
       Subject.toLowerCase()=="mathematics"?setSubject("maths"):null
    setLoading(true)
-    await fetch("http://localhost:3000/api/post", {
+    await fetch("http://notesspace.netlify.app/api/post", {
       method: "POST",
       body: JSON.stringify({
         topic: Topic,
