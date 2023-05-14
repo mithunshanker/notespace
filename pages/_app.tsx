@@ -1,10 +1,12 @@
 import { AppProps } from 'next/app'
 import Script from 'next/script'
 import '../styles/globals.css'
+import Head from 'next/head'
 
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <>
+<Head>
    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
 
 <Script strategy="lazyOnload">
@@ -17,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         });
     `}
 </Script>
+  </Head>
   <Component {...pageProps} /></>
 }
 
