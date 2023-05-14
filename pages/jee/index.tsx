@@ -9,6 +9,7 @@ import Image from "next/image";
 import pdf from "../../public/images/pdf.png";
 import other from "../../public/images/other.png";
 import { useRouter } from "next/router";
+import Script from 'next/script'
 
 export async function getServerSideProps(context: { query: { s: any; }; }) {
   const f = context.query.s && context.query.s;
@@ -94,6 +95,18 @@ We believe that handwritten notes are the best way to learn complex concepts, as
 In addition to handwritten notes, we also provide other useful resources such as practice tests, quizzes, and video lectures to help students prepare for the exam. Our website is user-friendly, making it easy for students to navigate and find the resources they need.
 
 Overall, our website is a valuable resource for JEE aspirants who want to succeed in the exam by accessing high-quality handwritten notes and other helpful resources." />
+    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+
+<Script strategy="lazyOnload">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+        page_path: window.location.pathname,
+        });
+    `}
+</Script>
       </Head>
       
         {/* Navbar */}
