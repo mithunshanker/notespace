@@ -1,6 +1,7 @@
 import React from 'react'
 import 'tailwindcss/tailwind.css'
 import Head from 'next/head'
+import Script from 'next/script'
 
 
 
@@ -17,6 +18,18 @@ We believe that handwritten notes are the best way to learn complex concepts, as
 In addition to handwritten notes, we also provide other useful resources such as practice tests, quizzes, and video lectures to help students prepare for the exam. Our website is user-friendly, making it easy for students to navigate and find the resources they need.
 
 Overall, our website is a valuable resource for JEE & NEET aspirants who want to succeed in the exam by accessing high-quality handwritten notes and other helpful resources." />
+    <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`} />
+
+<Script strategy="lazyOnload">
+    {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+        page_path: window.location.pathname,
+        });
+    `}
+</Script>
       </Head>
 {/* <!-- Section 1 --> */}
 
