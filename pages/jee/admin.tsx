@@ -9,7 +9,7 @@ import 'tailwindcss/tailwind.css'
 function Admin() {
   const [Topic, setTopic] = useState("")
   const [Subject, setSubject] = useState("")
-  const[Downloadurl,setDownloadurl]=useState("")
+  const[Downloadurl,setDownloadurl]=useState()
   const[Turl,setTurl]=useState("")
   const[Type,setType]=useState("")
   const[Loading,setLoading]=useState(false)
@@ -20,8 +20,29 @@ function Admin() {
   let submitForm = async () => {
     if((Topic&&Subject&&Downloadurl&&Type&&Subject!=null)){
       Subject.toLowerCase()=="mathematics"?setSubject("maths"):null
+
+      
+      
+      fetch('https://api.gofile.io/getServer')
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === 'ok') {
+          fetch('https://${data.data.server}.gofile.io/uploadFile', {
+    method: 'POST',
+    body: Downloadurl,
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.status === 'ok') {
+      setDownloadurl(data.data.downloadPage)
+    }
+  })
+  .catch(error => console.error(error))
+        }
+      })
+      .catch(error => console.error(error))
    setLoading(true)
-    await fetch("https://notesspace.netlify.app/api/post", {
+    await fetch("https://notesspace/api/post", {
       method: "POST",
       body: JSON.stringify({
         topic: Topic,
@@ -91,9 +112,9 @@ function Admin() {
       </label>
     </div>
     <div className="md:w-2/3">
-      <input value={Downloadurl} onChange={(e)=>{
-        setDownloadurl(e.target.value)
-      }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" />
+      <input type="file" onChange={(e)=>{
+        setDownloadurl(e.target.files[0])
+      }} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name"  />
     </div>
   </div>
   <div className="md:flex md:items-center mb-6">
