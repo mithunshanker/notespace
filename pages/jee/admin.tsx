@@ -55,7 +55,7 @@ function Admin() {
     });
     setTopic("")
     setSubject("")
-    setDownloadurl()
+    setDownloadurl("")
     setTurl("")
     setType("")
     setSuccess(true)
