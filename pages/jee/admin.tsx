@@ -9,7 +9,7 @@ import 'tailwindcss/tailwind.css'
 function Admin() {
   const [Topic, setTopic] = useState("")
   const [Subject, setSubject] = useState("")
-  const[Downloadurl,setDownloadurl]=useState()
+  const[Downloadurl,setDownloadurl]=useState("")
   const[Turl,setTurl]=useState("")
   const[Type,setType]=useState("")
   const[Loading,setLoading]=useState(false)
