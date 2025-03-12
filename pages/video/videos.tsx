@@ -134,4 +134,3 @@ function Videos({ data }: InferGetServerSidePropsType<typeof getServerSideProps>
 }
 
 export default Videos;
-

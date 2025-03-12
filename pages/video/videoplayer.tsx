@@ -6,8 +6,10 @@ import Link from 'next/link';
 
 function Videoplayer() {
   const router = useRouter();
-  const videoId = router.query.link;
-  const back = router.query.back
+  
+  // Ensure videoId and back are strings or provide default values
+  const videoId = typeof router.query.link === 'string' ? router.query.link : '';
+  const back = typeof router.query.back === 'string' ? router.query.back : '/';
 
   return (
     <>
@@ -20,7 +22,7 @@ function Videoplayer() {
         <Link href="/" className="text-2xl font-bold text-blue-500">
           Note Space
         </Link>
-        <Link href={`${back}`} className="text-black hover:text-blue-500 transition">
+        <Link href={back} className="text-black hover:text-blue-500 transition">
           🔙 Back to Videos
         </Link>
       </nav>
@@ -28,13 +30,17 @@ function Videoplayer() {
       {/* Video Player */}
       <div className="flex justify-center items-center min-h-screen bg-white px-4 py-6">
         <div className="w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
-          <iframe
-            className="w-full aspect-video rounded-lg"
-            src={`https://www.youtube.com/embed/${videoId}`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          {videoId ? (
+            <iframe
+              className="w-full aspect-video rounded-lg"
+              src={`https://www.youtube.com/embed/${videoId}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <p className="text-center text-red-500 font-semibold">Invalid video link.</p>
+          )}
         </div>
       </div>
     </>
