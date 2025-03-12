@@ -13,7 +13,7 @@ import Script from 'next/script'
 
 export async function getServerSideProps(context: { query: { s: any; }; }) {
   const f = context.query.s && context.query.s;
-  const fq = { subject: f };
+  const fq = { subject: f && f.charAt(0).toUpperCase() + f.slice(1) };
   try {
     const client = await clientPromise;
     const db = client.db("db");
@@ -161,7 +161,7 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
                   </li>
                   <li>
                     <a
-                      href="/jee?s=physics"
+                      href="/jee?s=Physics"
                       onClick={() => C_handler("p")}
                       className={`block py-2 pl-3 pr-4 text${
                         P
@@ -174,7 +174,7 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
                   </li>
                   <li>
                     <a
-                      href="/jee?s=chemistry"
+                      href="/jee?s=Chemistry"
                       onClick={() => C_handler("c")}
                       className={`block py-2 pl-3 pr-4 text${
                         C
@@ -187,7 +187,7 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
                   </li>
                   <li>
                     <a
-                      href="/jee?s=maths"
+                      href="/jee?s=Maths"
                       onClick={() => C_handler("m")}
                       className={`block py-2 pl-3 pr-4 text${
                         M
@@ -264,7 +264,7 @@ Overall, our website is a valuable resource for JEE aspirants who want to succee
           </div>
         </nav>
         {/* items */}
-        {data.map((d: { _id: Key | undefined; type: {} | null | undefined; topic: {} | null | undefined; subject: {} | null | undefined; downloadurl: string | undefined; }) => {
+        {data&&data.map((d: { _id: Key | undefined; type: {} | null | undefined; topic: {} | null | undefined; subject: {} | null | undefined; downloadurl: string | undefined; }) => {
           return (
             <div key={d._id} className="flex justify-center pt-5 pr-5 pl-5 ">
               <div className=" pt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transition duration-500 transform hover:scale-105">
