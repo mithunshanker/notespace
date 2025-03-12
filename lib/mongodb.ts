@@ -1,10 +1,10 @@
 import { MongoClient, MongoClientOptions } from 'mongodb';
 
-if (!process.env.MONGODB_URI) {
+if (!process.env.NEXT_PUBLIC_MONGODB_URI) {
   throw new Error('❌ Missing MONGODB_URI in .env.local');
 }
 
-const uri: string = process.env.MONGODB_URI;
+const uri: string = process.env.NEXT_PUBLIC_MONGODB_URI;
 const options: MongoClientOptions = {}; // No need for deprecated options
 
 let client: MongoClient;
